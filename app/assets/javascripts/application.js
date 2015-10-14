@@ -15,16 +15,16 @@
 //= require d3
 //= require_tree .
 function updateCourse() {
-  $(".btn").last().attr("disabled", true)
-  $(".edit_course").submit()
+  $(event.target).attr("disabled", true);
+  $(event.target).closest("form").submit();
 }
 
 $(function (){
-  $(".btn").last().on("click", updateCourse)
+  $("input[type=submit]").on("click", updateCourse);
 });
 
 function hideLastRow() {
-  last = $(".association.container").last()
+  last = $(".association.container").last();
   if(last) {
     last.hide();
   }
@@ -50,26 +50,26 @@ function clickAndDelete() {
 
 $(clickAndDelete);
 
-$(function() {
-  $('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return false;
-      }
-    }
-  });
-});
+// $(function() {
+//   $('a[href*=#]:not([href=#])').click(function() {
+//     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+//       var target = $(this.hash);
+//       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+//       if (target.length) {
+//         $('html,body').animate({
+//           scrollTop: target.offset().top
+//         }, 1000);
+//         return false;
+//       }
+//     }
+//   });
+// });
 
-
-function topModal() {
-  $('#super_modal').modal('show')
-}
-
-$(function(){
-  $(".fa.fa-calendar").on("click", topModal)
-})
+//
+// function topModal() {
+//   $('#super_modal').modal('show')
+// }
+//
+// $(function(){
+//   $(".fa.fa-calendar").on("click", topModal)
+// })
