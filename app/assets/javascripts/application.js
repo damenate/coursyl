@@ -14,8 +14,10 @@
 //= require jquery_ujs
 //= require d3
 //= require_tree .
+
+
 function updateCourse() {
-  $(event.target).attr("disabled", true);
+  $(event.target).prop("disabled", true);
   $(event.target).closest("form").submit();
 }
 
@@ -50,26 +52,39 @@ function clickAndDelete() {
 
 $(clickAndDelete);
 
-// $(function() {
-//   $('a[href*=#]:not([href=#])').click(function() {
-//     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-//       var target = $(this.hash);
-//       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-//       if (target.length) {
-//         $('html,body').animate({
-//           scrollTop: target.offset().top
-//         }, 1000);
-//         return false;
-//       }
-//     }
-//   });
-// });
-
-//
-// function topModal() {
-//   $('#super_modal').modal('show')
+// function updateCourse(button){
+//   button.disabled = true;
+//   button.form.submit();
 // }
 //
-// $(function(){
-//   $(".fa.fa-calendar").on("click", topModal)
-// })
+// window.onload = function(){
+//   var section = document.getElementsByClassName("association");
+//   var last = section[section.length - 1];
+//   last.style.display = "none";
+// }
+//
+// function showNewGrade(){
+//   var section = document.getElementsByClassName("association");
+//   var last = section[section.length - 1];
+//   last.style.display = "block";
+// }
+//
+// function hideSection(button){
+//   var hideRow = button.parentElement.parentElement.parentElement;
+//   var markDestroy = button.parentElement.lastElementChild;
+//   hideRow.style.display = "none";
+//   markDestroy.checked = true;
+// }
+//
+
+
+
+
+
+
+
+
+
+
+
+//
